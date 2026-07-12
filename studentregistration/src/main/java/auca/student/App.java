@@ -91,7 +91,7 @@ public class App
      */
     public int[] getEvenNumbers(int[] numbers) {
         if (numbers == null || numbers.length == 0) {
-            return null;
+            return new int[0];
         }
 
         int count = 0;
