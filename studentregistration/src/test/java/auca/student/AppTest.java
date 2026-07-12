@@ -1,5 +1,6 @@
 package auca.student;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
 
@@ -157,5 +158,117 @@ public class AppTest
         assertEquals("incorrect input message", app.greetByAgeAndGender("unknown", 25));
         assertEquals("incorrect input message", app.greetByAgeAndGender("male", 25));
         assertEquals("incorrect input message", app.greetByAgeAndGender("", 25));
+    }
+
+    /**
+     * Test for getGrade function - sample marks
+     */
+    @Test
+    public void testGetGradeForSampleMarks()
+    {
+        App app = new App();
+        assertEquals("D", app.getGrade(new int[]{40, 50, 80, 90, 87}));
+    }
+
+    /**
+     * Test for getGrade function - distinction A
+     */
+    @Test
+    public void testGetGradeForDistinctionA()
+    {
+        App app = new App();
+        assertEquals("A", app.getGrade(new int[]{90, 95, 97}));
+    }
+
+    /**
+     * Test for getGrade function - distinction B
+     */
+    @Test
+    public void testGetGradeForDistinctionB()
+    {
+        App app = new App();
+        assertEquals("B", app.getGrade(new int[]{80, 85, 88}));
+    }
+
+    /**
+     * Test for getGrade function - distinction C
+     */
+    @Test
+    public void testGetGradeForDistinctionC()
+    {
+        App app = new App();
+        assertEquals("C", app.getGrade(new int[]{70, 75, 78}));
+    }
+
+    /**
+     * Test for getGrade function - distinction D
+     */
+    @Test
+    public void testGetGradeForDistinctionD()
+    {
+        App app = new App();
+        assertEquals("D", app.getGrade(new int[]{60, 65, 67}));
+    }
+
+    /**
+     * Test for getGrade function - distinction E
+     */
+    @Test
+    public void testGetGradeForDistinctionE()
+    {
+        App app = new App();
+        assertEquals("E", app.getGrade(new int[]{50, 55}));
+    }
+
+    /**
+     * Test for getGrade function - fail grade F
+     */
+    @Test
+    public void testGetGradeForFail()
+    {
+        App app = new App();
+        assertEquals("F", app.getGrade(new int[]{40, 45, 48}));
+    }
+
+    /**
+     * Test for getGrade function - invalid input
+     */
+    @Test
+    public void testGetGradeForInvalidInput()
+    {
+        App app = new App();
+        assertEquals("incorrect input message", app.getGrade(null));
+        assertEquals("incorrect input message", app.getGrade(new int[]{}));
+    }
+
+    /**
+     * Test for getEvenNumbers function - sample input
+     */
+    @Test
+    public void testGetEvenNumbers()
+    {
+        App app = new App();
+        assertArrayEquals(new int[]{2, 4, 6, 8, 10}, app.getEvenNumbers(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}));
+    }
+
+    /**
+     * Test for getEvenNumbers function - no even numbers
+     */
+    @Test
+    public void testGetEvenNumbersWithNoEvenNumbers()
+    {
+        App app = new App();
+        assertArrayEquals(new int[]{}, app.getEvenNumbers(new int[]{1, 3, 5, 7, 9}));
+    }
+
+    /**
+     * Test for getEvenNumbers function - empty or null input
+     */
+    @Test
+    public void testGetEvenNumbersWithInvalidInput()
+    {
+        App app = new App();
+        assertArrayEquals(new int[]{}, app.getEvenNumbers(new int[]{}));
+        assertArrayEquals(new int[]{}, app.getEvenNumbers(null));
     }
 }

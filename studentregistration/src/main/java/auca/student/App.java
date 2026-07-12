@@ -52,9 +52,66 @@ public class App
         
         return "incorrect input message"; // for invalid gender
     }
-    // Grading system that takes a list of marks you geot from different course then find the average
-    // 40,50,80,90,87
-    // 
+    /**
+     * Calculate the grade from a list of marks.
+     * @param marks array of marks for different courses
+     * @return grade letter based on the average
+     */
+    public String getGrade(int[] marks) {
+        if (marks == null || marks.length == 0) {
+            return "incorrect input message";
+        }
+
+        int total = 0;
+        for (int mark : marks) {
+            total += mark;
+        }
+
+        double average = total / (double) marks.length;
+
+        if (average >= 90) {
+            return "A";
+        } else if (average >= 80) {
+            return "B";
+        } else if (average >= 70) {
+            return "C";
+        } else if (average >= 60) {
+            return "D";
+        } else if (average >= 50) {
+            return "E";
+        } else {
+            return "F";
+        }
+    }
+
+/**
+     * Return only the even numbers from an array.
+     * @param numbers input array of integers
+     * @return array containing only even numbers
+     */
+    public int[] getEvenNumbers(int[] numbers) {
+        if (numbers == null || numbers.length == 0) {
+            return new int[0];
+        }
+
+        int count = 0;
+        for (int number : numbers) {
+            if (number % 2 == 0) {
+                count++;
+            }
+        }
+
+        int[] evenNumbers = new int[count];
+        int index = 0;
+        for (int number : numbers) {
+            if (number % 2 == 0) {
+                evenNumbers[index] = number;
+                index++;
+            }
+        }
+
+        return evenNumbers;
+    }
     
     public static void main( String[] args )
     {
@@ -69,5 +126,7 @@ public class App
         System.out.println(app.greetByAgeAndGender("female", 25));
         System.out.println(app.greetByAgeAndGender("boy", 40));
         System.out.println(app.greetByAgeAndGender("male", 20));
+        System.out.println(app.getGrade(new int[]{40, 50, 80, 90, 87}));
+        System.out.println(java.util.Arrays.toString(app.getEvenNumbers(new int[]{1,2,3,4,5,6,7,8,9,10})));
     }
 }
