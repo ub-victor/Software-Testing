@@ -38,7 +38,6 @@ public class AppTest
         // Test with negative numbers
         assertEquals(-5, app.addTwoNumbers(-10, 5));
         assertEquals(-15, app.addTwoNumbers(-5, -10));
-        
     }
 
     /**
