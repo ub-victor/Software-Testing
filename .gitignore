@@ -21,7 +21,6 @@ env/
 coverage.xml
 
 # IDEs and editors
-.vscode/
 .idea/
 *.swp
 
@@ -47,3 +46,7 @@ yarn-error.log*
 
 # Project specific
 # Add other files or directories to ignore below
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore
