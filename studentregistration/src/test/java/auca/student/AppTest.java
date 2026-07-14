@@ -272,4 +272,3 @@ public class AppTest
         assertArrayEquals(new int[]{}, app.getEvenNumbers(null));
     }
 }
-
